@@ -1,0 +1,31 @@
+ext {
+    deps = [
+            "spring-boot-starter-web"     : "org.springframework.boot:spring-boot-starter-web",
+            "spring-boot-starter-webflux" : "org.springframework.boot:spring-boot-starter-webflux",
+            "spring-boot-starter-actuator": "org.springframework.boot:spring-boot-starter-actuator",
+            "spring-boot-starter-data-jpa": "org.springframework.boot:spring-boot-starter-data-jpa",
+            "spring-security"             : "org.springframework.boot:spring-boot-starter-security",
+            "spring-boot-starter-test"    : "org.springframework.boot:spring-boot-starter-test",
+            "spring-web"                  : "org.springframework:spring-web",
+            "spring-webflux"              : "org.springframework:spring-webflux",
+            "spring-activemq"             : "org.springframework.boot:spring-boot-starter-activemq",
+            "spring-kafka"                : "org.springframework.kafka:spring-kafka:2.6.5",
+            "spring-kafka-test"           : "org.springframework.kafka:spring-kafka-test:2.6.5",
+
+            "liquibase"                   : [
+                    "org.liquibase:liquibase-core:4.1.1",
+                    "org.postgresql:postgresql:42.2.18"
+            ],
+            "postgresql"                  : "org.postgresql:postgresql:42.2.18",
+            "commons-lang3"               : "org.apache.commons:commons-lang3:3.11",
+
+            "validation-api"              : "javax.validation:validation-api:2.0.1.Final",
+            "swagger-annotations"         : "io.swagger:swagger-annotations:1.5.20",
+            "orika-spring-boot-starter"   : "net.rakugakibox.spring.boot:orika-spring-boot-starter:1.9.0",
+            "jjwt-api"                    : "io.jsonwebtoken:jjwt-api:0.11.2",
+            "jjwt-impl"                   : "io.jsonwebtoken:jjwt-impl:0.11.2",
+            "jjwt-orgjson"                : "io.jsonwebtoken:jjwt-orgjson:0.11.2",
+            "spring-quartz"               : "org.springframework.boot:spring-boot-starter-quartz:2.4.2",
+
+    ]
+}
