@@ -1,9 +1,10 @@
-package com.arcmicroservice.microservice;
+package com.arcmicroservice;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.info.BuildProperties;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.ConfigurableEnvironment;
 
 import java.util.Arrays;
@@ -11,6 +12,7 @@ import java.util.stream.Collectors;
 
 @Slf4j
 @SpringBootApplication
+@Configuration
 public class MicroserviceApplication {
 
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.arcmicroservice.microservice.controller;
+package com.arcmicroservice.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

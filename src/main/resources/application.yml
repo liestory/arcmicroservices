@@ -1,0 +1,36 @@
+server:
+  port: ${APP_PORT:8080}
+  servlet:
+    session:
+      cookie:
+        http-only: true
+    context-path: /microservice
+    application-display-name: microservice
+  tomcat:
+    max-connections: 1000
+    accept-count: 100
+    connection-timeout: 30000
+
+spring:
+  application:
+    name: microservice
+
+
+logging:
+  level:
+    ROOT: INFO
+    com.arcmicroservice: DEBUG
+    org.springframework: INFO
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: info, health, metrics
+  metrics:
+    export:
+      atlas:
+        enabled: true
+
+organization:
+  maxUser: 10
