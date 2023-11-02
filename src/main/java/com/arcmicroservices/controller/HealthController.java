@@ -1,4 +1,4 @@
-package com.arcmicroservice.controller;
+package com.arcmicroservices.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -16,6 +16,7 @@ public class HealthController {
 
     @RequestMapping(value = "/health", method = RequestMethod.GET)
     public ResponseEntity ping() {
+
         return new ResponseEntity(HttpStatus.OK);
     }
 }
