@@ -8,10 +8,10 @@ RUN gradle build -x test
 FROM eclipse-temurin:17-jdk-alpine
 
 CMD ["java", "-jar", "microservice.jar", "application.yml"]
-EXPOSE 8080
+EXPOSE 8000
 
 RUN mkdir /app
 
 COPY --from=build /home/gradle/src/build/libs/*.jar /app/microservice.jar
 
-ENTRYPOINT ["java", "-XX:+UnlockExperimentalVMOptions", "-XX:+UseCGroupMemoryLimitForHeap", "-Djava.security.egd=file:/dev/./urandom","-jar","/app/microservice.jar"]
+ENTRYPOINT ["java", "-XX:+UnlockExperimentalVMOptions", "-XX:+UseContainerSupport", "-Djava.security.egd=file:/dev/./urandom","-jar","/app/microservice.jar"]
