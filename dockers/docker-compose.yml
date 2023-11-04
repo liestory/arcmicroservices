@@ -1,0 +1,10 @@
+version: '3.1'
+services:
+  postgres:
+    image: postgres:12.4
+    environment:
+      - POSTGRES_USER=arcmicroservices
+      - POSTGRES_PASSWORD=arcmicroservices
+      - POSTGRES_DB=postgres
+    ports:
+      - 5433:5432
