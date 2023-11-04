@@ -13,10 +13,10 @@ ext {
             "spring-kafka-test"           : "org.springframework.kafka:spring-kafka-test:2.6.5",
 
             "liquibase"                   : [
-                    "org.liquibase:liquibase-core:4.1.1",
-                    "org.postgresql:postgresql:42.2.18"
+                    "org.liquibase:liquibase-core",
+                    "org.postgresql:postgresql"
             ],
-            "postgresql"                  : "org.postgresql:postgresql:42.2.18",
+            "postgresql"                  : "org.postgresql:postgresql",
             "commons-lang3"               : "org.apache.commons:commons-lang3:3.11",
 
             "validation-api"              : "javax.validation:validation-api:2.0.1.Final",

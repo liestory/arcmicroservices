@@ -25,16 +25,36 @@ bootJar {
 	}
 }
 
-//apply from: "$rootDir/deps.gradle"
+apply from: "$rootDir/deps.gradle"
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework:spring-web'
+	implementation 'io.springfox:springfox-boot-starter:3.0.0'
+	implementation 'javax.persistence:javax.persistence-api:2.2'
+
+	implementation deps."spring-boot-starter-data-jpa"
+
+	implementation deps."spring-boot-starter-webflux"
+	implementation deps."spring-webflux"
+
+	implementation deps."orika-spring-boot-starter"
+
+	implementation deps."swagger-annotations"
+	implementation deps."validation-api"
+	implementation deps."commons-lang3"
+
+	implementation deps."liquibase"
+	implementation deps."postgresql"
+
+
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+
 }
 
 test {

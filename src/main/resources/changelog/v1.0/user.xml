@@ -1,0 +1,65 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="1" author="Igor Nemykin">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists schemaName="auth" tableName="user"/>
+            </not>
+        </preConditions>
+
+        <createTable schemaName="auth"
+                     tableName="user"
+                     remarks="Таблица пользователей">
+            <column name="id" type="uuid"
+                    remarks="Идентификатор записи">
+                <constraints primaryKey="true"
+                             primaryKeyName="user_pk"
+                             nullable="false"/>
+            </column>
+            <column name="username" type="varchar(255)" remarks="Наименование краткое">
+                <constraints nullable="false" unique="true"/>
+            </column>
+
+            <column name="password" type="varchar(255)" remarks="Пароль пользователя">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="email" type="varchar(255)" remarks="Наименование краткое">
+                <constraints nullable="false"/>
+            </column>
+
+            <column name="roleGlobal" type="varchar(255)" remarks="Глобальная роль в системе">
+                <constraints nullable="false"/>
+            </column>
+            <column name="active" type="boolean" defaultValueBoolean="true">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="timestamp with time zone"
+                    remarks="Дата создания">
+            </column>
+            <column name="updated_at" type="timestamp with time zone"
+                    remarks="Дата обновления">
+            </column>
+
+
+        </createTable>
+        <comment>Создание таблицы пользователя</comment>
+    </changeSet>
+
+    <changeSet id="2" author="Igor Nemykin">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <indexExists schemaName="auth" tableName="user" indexName="user_username_idx"/>
+            </not>
+        </preConditions>
+        <createIndex schemaName="auth" tableName="user" indexName="user_username_idx">
+            <column name="username"/>
+        </createIndex>
+        <comment>Индекс для поиска по имени пользователя</comment>
+    </changeSet>
+
+</databaseChangeLog>
