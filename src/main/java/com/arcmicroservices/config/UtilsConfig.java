@@ -6,8 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import java.time.Clock;
 
 /**
- * UtilsConfig.
- *
+ * @author Asus 04.11.2023
  */
 @Configuration
 public class UtilsConfig {

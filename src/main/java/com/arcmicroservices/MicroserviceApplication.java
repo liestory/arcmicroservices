@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import java.util.Arrays;
@@ -19,6 +20,7 @@ import java.util.stream.Collectors;
 @Configuration
 @EnableAsync
 @Slf4j
+@EnableScheduling
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = {"com.arcmicroservices.repository"})
 public class MicroserviceApplication {

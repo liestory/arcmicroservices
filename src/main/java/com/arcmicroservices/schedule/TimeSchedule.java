@@ -9,9 +9,7 @@ import org.springframework.stereotype.Component;
 import java.time.Clock;
 
 /**
- * CronSchedule.
- *
- * @author Ilya_Sukhachev
+ * @author Asus 04.11.2023
  */
 @Component
 @ConditionalOnProperty(prefix = "scheduling.timeout", name = {"enabled"}, matchIfMissing = false)
