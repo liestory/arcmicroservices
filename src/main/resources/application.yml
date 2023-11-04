@@ -14,6 +14,8 @@ server:
 spring:
   application:
     name: microservice
+  main:
+    allow-bean-definition-overriding: true
   datasource:
     url: jdbc:postgresql://localhost:5432/postgres
     username: arcmicroservices
@@ -25,6 +27,22 @@ spring:
   liquibase:
     enabled: true
     change-log: classpath:/changelog/changelog-master.xml
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    properties:
+      hibernate.temp.use_jdbc_metadata_defaults: false
+    show-sql: false
+    hibernate:
+      hbm2ddl:
+        auto: none
+      default_schema: public
+      use_sql_comments: true
+      format_sql: true
+
+scheduling:
+  timeout:
+    enabled: true
+    interval: 5000
 
 
 logging:

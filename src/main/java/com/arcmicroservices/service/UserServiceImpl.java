@@ -27,6 +27,7 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
     private final MapperFacade mapperFacade;
 
+
     @PostConstruct
     public void postConstruct() {
         log.info("postConstruct");
