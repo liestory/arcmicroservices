@@ -16,6 +16,12 @@ spring:
     name: microservice
 
 
+scheduling:
+  timeout:
+    enabled: true
+    interval: 5000
+
+
 logging:
   level:
     ROOT: INFO

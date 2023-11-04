@@ -7,6 +7,7 @@ import org.springframework.boot.info.BuildProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.ConfigurableEnvironment;
 import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
@@ -16,6 +17,7 @@ import java.util.stream.Collectors;
 @Configuration
 @EnableAsync
 @Slf4j
+@EnableScheduling
 public class MicroserviceApplication {
 
     public static void main(String[] args) {

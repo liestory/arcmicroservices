@@ -16,7 +16,7 @@ public class HealthController {
 
     @RequestMapping(value = "/health", method = RequestMethod.GET)
     public ResponseEntity ping() {
-
+        log.info("health chek pong");
         return new ResponseEntity(HttpStatus.OK);
     }
 }
