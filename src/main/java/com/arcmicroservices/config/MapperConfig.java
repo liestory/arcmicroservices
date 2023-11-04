@@ -37,7 +37,7 @@ public class MapperConfig implements OrikaMapperFactoryConfigurer {
     @Override
     public void configure(MapperFactory orikaMapperFactory) {
         orikaMapperFactory.classMap(User.class, UserDto.class)
-                .field("username", "name")
+                .field("username", "username")
                 .fieldAToB("password", "password")
                 .fieldAToB("password", "repeatPassword")
                 .byDefault()

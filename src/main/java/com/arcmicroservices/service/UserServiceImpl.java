@@ -6,7 +6,6 @@ import com.arcmicroservices.repository.UserRepository;
 import jakarta.annotation.PostConstruct;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import ma.glasnost.orika.MapperFacade;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -14,7 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-import static java.util.UUID.randomUUID;
 
 /**
  * @author Asus 02.11.2023
@@ -25,7 +23,6 @@ import static java.util.UUID.randomUUID;
 @Transactional
 public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
-    private final MapperFacade mapperFacade;
 
 
     @PostConstruct
@@ -35,11 +32,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDto regUser(UserDto userDto) {
-        User user = mapperFacade.map(userDto, User.class);
-        user.setId(randomUUID());
-        user.setActiveUser(true);
+        User user = new User(UUID.randomUUID(), userDto.getUsername(), userDto.getPassword());
         userRepository.save(user);
-        userDto = mapperFacade.map(user, UserDto.class);
+        userDto.setId(user.getId());
         return userDto;
     }
 
@@ -49,8 +44,7 @@ public class UserServiceImpl implements UserService {
         UserDto userDto = new UserDto();
         userDto.setId(user.getId());
         userDto.setUsername(user.getUsername());
-        userDto.setEmail(user.getEmail());
-        userDto.setRoleGlobal(user.getRoleGlobal());
+        userDto.setPassword(user.getPassword());
         return userDto;
     }
 
@@ -64,7 +58,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void deleteUser(UUID id) {
-        userRepository.getOne(id).setActiveUser(false);
+        userRepository.deleteById(id);
     }
 
     @Override

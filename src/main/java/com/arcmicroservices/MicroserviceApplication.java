@@ -3,6 +3,7 @@ package com.arcmicroservices;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.info.BuildProperties;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -23,6 +24,7 @@ import java.util.stream.Collectors;
 @EnableScheduling
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = {"com.arcmicroservices.repository"})
+@EntityScan(basePackages = "com.arcmicroservices.model")
 public class MicroserviceApplication {
 
     public static void main(String[] args) {
