@@ -44,13 +44,6 @@ scheduling:
     enabled: true
     interval: 5000
 
-
-scheduling:
-  timeout:
-    enabled: true
-    interval: 5000
-
-
 logging:
   level:
     ROOT: INFO
