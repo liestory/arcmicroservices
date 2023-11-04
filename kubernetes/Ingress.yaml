@@ -4,7 +4,7 @@ metadata:
   name: microservice
 spec:
   rules:
-    - host: arch.homework
+    - host: "arch.homework"
       http:
         paths:
           - path: /
